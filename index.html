@@ -2455,7 +2455,7 @@ function renderRenewBody(){
   const B=BILLING||{}; const bin=B.bin||B.bankBin; const acc=B.account||B.acc; const accName=B.accName||'';
   let h='<div class="stat gold" style="margin-bottom:12px"><div class="lbl">'+RENEW_M+' tháng'+(thangTang(RENEW_M)>0?(' · 🎁 tặng '+thangTang(RENEW_M)):(' × '+fmt(price)))+'</div><div class="val">'+fmt(amount)+'</div></div>'+kmSaveHtml(price,RENEW_M);
   if(bin&&acc){
-    const info=(auth.currentUser?('XE '+((auth.currentUser.email||'').split('@')[0])):'XE');
+    const info=(auth.currentUser?('SEVQR XE '+((auth.currentUser.email||'').split('@')[0])):'SEVQR XE');
     const url='https://img.vietqr.io/image/'+bin+'-'+acc+'-compact2.png?amount='+Math.round(amount)+'&addInfo='+encodeURIComponent(info)+'&accountName='+encodeURIComponent(accName);
     h+='<div style="text-align:center"><img src="'+url+'" style="width:220px;max-width:78%;background:#fff;border-radius:12px;padding:8px" alt="QR"><div class="tiny muted" style="margin-top:6px">'+esc(accName)+' · '+esc(acc)+(B.bankName?(' · '+esc(B.bankName)):'')+'</div></div>';
   } else {
@@ -2768,7 +2768,7 @@ if('serviceWorker' in navigator && /^https?:/.test(location.protocol)){
 <script type="module">
 import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-const APP_ID = "xe", APP_VERSION = "2.2";
+const APP_ID = "xe", APP_VERSION = "2.3";
 const FB = { apiKey:"AIzaSyA_kjQ-CdASRkf50Glz3kQajlkD5qGWC4k", authDomain:"so-no-cc57a.firebaseapp.com",
   projectId:"so-no-cc57a", storageBucket:"so-no-cc57a.firebasestorage.app",
   messagingSenderId:"571694791559", appId:"1:571694791559:web:8e409728a520e2d370b122" };
